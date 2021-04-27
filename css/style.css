@@ -109,7 +109,7 @@ img {
 }
 
 .page-link {
-  display: block;
+  position: relative;
   padding-top: 32px;
   padding-bottom: 32px;
   font-weight: 500;
@@ -118,6 +118,17 @@ img {
   letter-spacing: 0.02em;
   text-decoration: none;
   color: var(--title-text-color);
+}
+
+.page-link.current::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
 }
 
 .logo-web,
@@ -253,6 +264,22 @@ img {
   text-align: center;
   letter-spacing: 0.03em;
   color: var(--title-text-color);
+}
+
+.work-thumb {
+  position: relative;
+}
+
+.work-label {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  background: rgba(47, 48, 58, 0.8);
 }
 
 .section-team {
@@ -405,7 +432,35 @@ img {
   text-decoration: none;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+}
+
+.project-card-thumb {
+  position: relative;
   overflow: hidden;
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 63px 24px;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  color: var(--secondary-text-color);
+  background-color: rgba(33, 150, 243, 0.9);
+  border: 1px solid #000000;
+  transform: translatey(100%);
+}
+
+.link-card:hover .project-card-thumb {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.link-card:hover .project-overlay {
+  transform: translatey(0);
 }
 
 .card-title {
