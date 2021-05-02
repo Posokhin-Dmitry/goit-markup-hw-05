@@ -411,6 +411,7 @@ img {
   margin-left: 8px;
 }
 
+.filter-button.current,
 .filter-button:hover,
 .filter-button:focus {
   background-color: var(--accent-color);
